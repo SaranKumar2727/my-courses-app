@@ -3,6 +3,7 @@
 const connectToMongo = require("./db");
 const express = require("express");
 const cors = require("cors");
+const path = require('path');
 
 connectToMongo();
 
@@ -14,7 +15,8 @@ const port = 5000;
 // available routes
 app.use("/api/auth", require("./routes/auth"));
 app.use("/api/courses", require("./routes/course"));
-
+app.use(express.static(path.join(__dirname, 'build')));
+app.get('*', (req, res) => { res.sendFile(path.join(__dirname, 'build', 'index.html')); });
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });
