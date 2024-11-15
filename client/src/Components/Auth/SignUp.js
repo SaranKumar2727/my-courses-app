@@ -10,7 +10,7 @@ const Signup = ({ onSignup }) => {
 
   const handleSignup = async () => {
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/createuser', { name, email, password, userid: userId });
+      const response = await axios.post('/api/auth/createuser', { name, email, password, userid: userId });
       console.log(response);
       
       onSignup(response.data);

@@ -13,7 +13,7 @@ const CourseItem = ({ course, onEdit, onDelete, onEnroll, onUnenroll, isEnrolled
     <div className="course-actions">
       {isEnrolled ? (
         <button className="button-secondary" onClick={() => onUnenroll && onUnenroll(course.courseid)}>
-          Unenroll
+          button
         </button>
       ) : (
         <button className="button-primary" onClick={() => onEnroll && onEnroll(course.courseid)}>

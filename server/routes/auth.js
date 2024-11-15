@@ -14,9 +14,9 @@ const JWT_SECRET = "Sathwik143"; // Replace this with a more secure JWT secret i
 router.post(
   "/createuser",
   [
-    body("name", "Enter a valid name").isLength({ min: 3 }),
+    body("name", "Enter a valid name"),
     body("email", "Enter a valid email").isEmail(),
-    body("password", "Enter a valid password").isLength({ min: 5 }),
+    body("password", "Enter a valid password"),
     body("userid", "Enter a valid userid").isNumeric(), // Validate userid
   ],
   async (req, res) => {
